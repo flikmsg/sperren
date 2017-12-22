@@ -1,3 +1,5 @@
+const forge = require('node-forge')
+
 module.exports = class SecureIdentity {
 
 
@@ -8,7 +10,7 @@ module.exports = class SecureIdentity {
 
     init({ bits=2048, workers=2 }) {
         new Promise((resolve, reject) => {
-            rsa.generateKeyPair({bits: 2048, workers: 2}, function(err, keypair) {
+            forge.generateKeyPair({bits: 2048, workers: 2}, function(err, keypair) {
                 if(err) return reject(err)
                 this.privateKey = keypair.privateKey
                 this.publicKey = keypair.publicKey
