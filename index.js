@@ -12,6 +12,7 @@
 
 
 const SecureConversation = require('./SecureConversation')
+const Identity = require('./Identity')
 
 // const user1 = new SecureIdentity({ keypair: await getSelf() })
 // const user2 = new SecureIdentity({ keypair: await getUser('user1') })
@@ -22,12 +23,14 @@ const SecureConversation = require('./SecureConversation')
 //     message: "Hi!"
 // })
 
-const convo = new SecureConversation( {} );
+module.exports = { SecureConversation, Identity }
 
-const msg = convo.preparePayload({
-    message: "Hi, how are you doing today!"
-})
+// const convo = new SecureConversation( {} );
 
-console.log(msg)
+// const msg = convo.preparePayload({
+//     message: "Hi, how are you doing today!"
+// })
 
-console.log(convo.recievePayload(msg))
+// console.log(msg)
+
+// console.log(convo.recievePayload(msg))
